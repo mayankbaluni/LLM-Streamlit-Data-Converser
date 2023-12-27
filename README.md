@@ -27,5 +27,18 @@ streamlit run stream-app.py
 exit 0
 ```
 
+## How to Use
+To interact with the question-answering system, follow these simple steps:
+1. **Navigate to the hosted Streamlit app**: Access the application through your web browser.
+2. **Upload CSV Data**: Utilize the file uploader within the app to upload your dataset in CSV format.
+3. **Ask Your Question**: Input your question regarding the data in the text field provided.
+4. **Receive the Answer**: Submit your question and the system will utilize the underlying LLM to generate an answer based on your data.
+
+## Built With
+- **LangChain**: A powerful framework used to integrate Large Language Models (LLMs) for advanced data processing and answering capabilities.
+- **Streamlit**: An open-source app framework that is the cornerstone of our interactive web interface, simplifying the deployment of data applications.
+- **Pandas**: An essential data analysis and manipulation library for Python, utilized here for efficient handling of CSV files and dataset operations.
+
+
 ## Contact
 For any queries or suggestions, feel free to contact me at [mayankbaluni@gmail.com]
