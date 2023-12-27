@@ -24,7 +24,7 @@ from io import StringIO, BytesIO
 
 #api_key1 = st.secrets["GOOGLE_API_KEY"]
 #api_key2 = st.secrets["OPENAI_API_KEY"]
-os.environ["GOOGLE_API_KEY"] ="AIzaSyD29fEos3V6S2L-AGSQgNu03GqZEIgJads"
+os.environ["GOOGLE_API_KEY"] ="GOOGLE_API_KEY"
 #os.environ["OPENAI_API_KEY"] = api_key2
 llm = GooglePalm(temperature=0.9, max_output_tokens= 512,verbose=True,streaming=True)
 #llm = OpenAI(temperature=0.9,verbose=True)
@@ -46,44 +46,10 @@ def generate_code(prompt, data_type, missing, shape):
         df.shape= {shape}\
         missing values: {missing}\
         instructions: Please provide short code in 2 lines for data analysis, user knows python, include column names and types,. Answer queries like the example below:\
+         \
         \
-        Example 1:\
-        query: which device has mostly asset status as stationary?.\
-        Answer:\
-        search 'Device Name' with 'Asset Status' as 'Stationary'. use 'Device Name' and 'Asset Status' and their types are 'str', 'str' and missing values are '357' and '332'\
-        Count the unique values of 'Asset Status' to determine how many distinct statuses exist, .\
         \
-        Example 2:\
-        query: what are the number of sales of 2curex in 2019?.\
-        Answer:\
-        Get 2019 sales for '2cureX', use str.lower().str.contains('2curex') & (df['Year'] == 2019) \
-        find net profit of company '2cureX', you need 'net profit', 'Year' and company 'Name' columns, their types are 'int', 'int', 'str'\
-        \
-        Example 3:\
-        query: mean of state of charge.\
-        Answer:\
-        calculate mean upto two decimal place, use df['State Of Charge%'].mean().round(2) \
-        Display answer\
-        \
-        Example 4:\
-        query: which asset has the maximum state of charge?.\
-        Answer:\
-        find name of the 'Asset Name' which has maximum state of charges use code(df['State Of Charge%'].idxmin())) \
-        give out the asset name and state of charge'\
-        \
-        Example 5:\
-        query: what is the median value of state of charge when TRU status is off.\
-        Answer:\
-        filter by TRU Status = off, find median of 'State Of Charge%' use code(df[(df['TRU Status'] == 'On')]['State Of Charge%'].median()) \
-        give out the median value'\
-        \
-        Example 6:\
-        query: graphs between average state of charge vs charging status.\
-        Answer:\
-        make a plot between 'Carging Status' and average 'State Of Charge%'. use matplotlib, use code (df.groupby('Charging Status')['State Of Charge%'].mean().plot(kind='bar')) \
-        present the plot'\
-        if query is not in example, make similar example and include code like example2, example2, example4\
-        \
+       \
         query: {prompt}\
         Answer: \
         " 
