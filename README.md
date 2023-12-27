@@ -3,6 +3,9 @@
 
 An interactive tool leveraging LangChain for dynamic question-answering from CSV datasets, featuring a Streamlit interface for ease of use and accessibility.
 
+![Overview](https://github.com/mayankbaluni/LLM-Streamlit-Data-Converser/blob/main/img/langchain-5-scheme.jpg)
+
+
 ## Overview
 This repository hosts the code for a question-answering system that utilizes large language models (LLMs) to provide answers based on the uploaded CSV data. The system integrates LangChain to leverage the power of LLMs and Streamlit for a user-friendly interface, allowing users to upload data and ask questions dynamically.
 
